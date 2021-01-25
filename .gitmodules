@@ -1,0 +1,3 @@
+[submodule "libyanbt"]
+	path = libyanbt
+	url = https://github.com/kumquat-ir/libyanbt.git
