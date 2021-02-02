@@ -6,6 +6,7 @@
 #include "libyanbt/nbtfile.h"
 #include "libyanbt/nbtread.h"
 #include "libyanbt/nbttag.h"
+#include "nbt_tree_view.h"
 
 main_window::main_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::main_window){
 	ui->setupUi(this);
@@ -17,7 +18,5 @@ main_window::~main_window(){
 
 void main_window::open_file(){
 	std::filesystem::path fpath = QFileDialog::getOpenFileName(this).toStdString();
-	std::cout << fpath << std::endl;
-	nbtfile nbtf = read_nbt(fpath);
-	std::cout << nbtf << std::endl;
+	ui->treeView->setModel(new nbt_tree_view(fpath));
 }

@@ -32,6 +32,8 @@ add_subdirectory(libyanbt)
 set(PROJECT_SOURCES
         main.cpp
         main_window.cpp
+		nbt_tree_view.h
+		nbt_tree_view.cpp
         main_window.h
         main_window.ui
 )
