@@ -18,5 +18,6 @@ main_window::~main_window(){
 
 void main_window::open_file(){
 	std::filesystem::path fpath = QFileDialog::getOpenFileName(this).toStdString();
-	ui->treeView->setModel(new nbt_tree_view(fpath));
+	nbt_tree_view* fin = new nbt_tree_view(fpath);
+	ui->treeView->setModel(fin);
 }
